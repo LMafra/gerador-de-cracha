@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Congressmen</h1>
+
+<p>
+  Download:
+  <%= link_to "CSV", congressmen_path(format: "csv")%>
+  <%= link_to "Excel", congressmen_path(format: "xls")%>
+</p>
+
+<table>
+  <thead>
+
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Ej</th>
+      <th>Area</th>
+      <th>Lecture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @congressmen.each do |congressman| %>
+      <tr>
+        <td><%= congressman.id%></td>
+        <td><%= congressman.name %></td>
+        <td><%= congressman.ej %></td>
+        <td><%= congressman.area %></td>
+        <td><%= congressman.lecture %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<h2>Import Congressmen</h2>
+
+<%= form_tag import_congressmen_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+
+
+
+<br>
+
+<%= link_to 'New Congressman', new_congressman_path %>

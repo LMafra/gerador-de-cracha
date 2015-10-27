@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @congressman.name %>
+</p>
+
+<p>
+  <strong>Ej:</strong>
+  <%= @congressman.ej %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @congressman.area %>
+</p>
+
+<p>
+  <strong>Lecture:</strong>
+  <%= @congressman.lecture %>
+</p>
+
+<%= link_to 'Edit', edit_congressman_path(@congressman) %> |
+<%= link_to 'Back', congressmen_path %>
